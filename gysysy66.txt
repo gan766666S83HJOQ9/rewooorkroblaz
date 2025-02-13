@@ -1,0 +1,4294 @@
+
+
+
+
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+
+local playerToWatch = "BetaTesterFluxus" -- replace with the name of the player you want to watch
+
+function onPlayerAdded(player)
+ if player.Name == playerToWatch then
+  local notificationText = player.Name .. " joined the game!"
+  local thumbnailType = Enum.ThumbnailType.HeadShot
+  local thumbnailSize = Enum.ThumbnailSize.Size420x420
+  local thumbnailUrl = game:GetService("Players"):GetUserThumbnailAsync(player.UserId, thumbnailType, thumbnailSize)
+  local notificationOptions = {
+   Title = "🛠 Avtor Hub Developer",
+   Text = notificationText,
+   Duration = 5,
+   Icon = thumbnailUrl,
+  }
+  StarterGui:SetCore("SendNotification", notificationOptions)
+ end
+end
+
+Players.PlayerAdded:Connect(onPlayerAdded)
+
+
+
+
+
+
+loadstring(game:HttpGet("https://pastebin.com/raw/1CqkFrh5"))()
+
+local guiyyy = Instance.new("ScreenGui")
+local TweenService = game:GetService("TweenService")
+  guiyyy.Name = "LoadScreen"
+  guiyyy.Parent = game.CoreGui
+
+  local loadscreen = Instance.new("ImageLabel", guiyyy)
+  Instance.new("UICorner", loadscreen)
+   
+  local label = Instance.new("TextLabel", guiyyy) 
+  label.Size = UDim2.new(0.233,0,0.075,0)
+  label.Position = UDim2.new(0.5,0,0.740,0)
+  label.BackgroundTransparency = 1
+  label.TextTransparency = 1
+  label.AnchorPoint = Vector2.new(0.5,0.5)
+  label.Text = "Avtor Hub"
+  label.TextScaled = true
+  label.Font = Enum.Font.Gotham
+  label.TextColor3 = Color3.fromRGB(255, 255, 255)
+  
+  loadscreen.UICorner.CornerRadius = UDim.new(0.125,0)
+  loadscreen.Size = UDim2.new(0.233,0,0.4,0)
+  loadscreen.Image = "http://www.roblox.com/asset/?id=17527774293"
+  loadscreen.Position = UDim2.new(0.5,0,0.5,0)
+  loadscreen.AnchorPoint = Vector2.new(0.5,0.5)
+  loadscreen.BorderSizePixel = 0
+  loadscreen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+  loadscreen.ImageTransparency = 1
+  loadscreen.BackgroundTransparency = 1
+
+  task.wait(0.5)
+
+  TweenService:Create(loadscreen, TweenInfo.new(1.5), {ImageTransparency = 0, BackgroundTransparency = 0}):Play()
+  TweenService:Create(label, TweenInfo.new(1.5), {TextTransparency = 0}):Play()
+  task.wait(3)
+  TweenService:Create(loadscreen, TweenInfo.new(1.5), {ImageTransparency = 1, BackgroundTransparency = 1}):Play()
+  TweenService:Create(label, TweenInfo.new(1.5), {TextTransparency = 1}):Play()
+  task.wait(1.5)
+  guiyyy:Destroy()
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Tesooooosoioisoso/ISHOOODDDA/main/ISHOOODDDA"))()
+ 
+local Window = Library.CreateLib("🔳Avtor Hub🔳", "LightTheme")
+ 
+ 
+local PlrTab = Window:NewTab("Main")
+local PlrSection = PlrTab:NewSection("Main")
+
+PlrSection:NewSlider("💎Set Fps Max💎", "Set your max fps in game", 200, 1, function(s)
+    setfpscap(s)
+end)
+
+PlrSection:NewButton("🛠Fix Camera🛠", "", function()
+if game.Players.LocalPlayer.Character then
+        if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+            game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+        end
+    end
+end)
+
+PlrSection:NewToggle("🌕Day/Night🌑", "ToggleInfo", function(state)
+    if state then
+        local Lighting = game:GetService("Lighting")
+
+Lighting.ClockTime = 0
+    else
+        local Lighting = game:GetService("Lighting")
+
+Lighting.ClockTime = 14
+    end
+end)
+
+PlrSection:NewButton("🔰Fluxus Vuln Patcher🔰", "🔰Fluxus Vuln Patcher🔰", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Wjwh3j1n"))()
+end)
+
+PlrSection:NewToggle("👁️‍🗨️Hide Hud👁️‍🗨️", "Hiden Hud", function(state)
+    if state then
+        game.CoreGui.TopBarApp.TopBarFrame.Visible = false
+    else
+        game.CoreGui.TopBarApp.TopBarFrame.Visible = true
+    end
+end)
+
+PlrSection:NewSlider("⚡Speed⚡", "Set you speed", 150, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+ 
+PlrSection:NewSlider("🔝Jump Power🔝", "Set you JumpPower", 250, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+PlrSection:NewSlider("🔁Fov Changer🔁", "change your fov player", 120, 80, function(s)
+    game.Workspace.CurrentCamera.FieldOfView = s
+end)
+
+PlrSection:NewToggle("♨️OFF Gravity♨️", "ToggleInfo", function(state)
+    if state then
+        game.Workspace.Gravity = 0
+    else
+        game.Workspace.Gravity = 190
+    end
+end)
+
+local PlrSection = PlrTab:NewSection("😎scripters won't be able to fling you😎")
+
+PlrSection:NewButton("✅Antifling ON✅", "Telekinesis (cars and other),", function()
+    _G.AntiFlingToggled = true
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/AntiFling'))()
+end)
+
+PlrSection:NewButton("❌Antifling OFF❌", "Telekinesis (cars and other),", function()
+    _G.AntiFlingToggled = false
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/AntiFling'))()
+end)
+
+local PlrSection = PlrTab:NewSection("💾Save Position And Teleport💾")
+
+PlrSection:NewButton("📩Save Position📩", "", function()
+Babuzina = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+end)
+
+PlrSection:NewButton("📤Teleport Position📤", "", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Babuzina)
+end)
+
+
+PlrSection:NewToggle("🦸Super-Human🦸", "Go Fast and Jump High", function(state)
+	if state then
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+	else
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+	end
+end)
+
+PlrSection:NewButton("✔Tp to click✔ (item)", "Teleport", function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Click Teleport"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+PlrSection:NewButton("💢Telekinesis FE💢", "Telekinesis (cars and other),", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md'),true))()
+end)
+
+
+PlrSection:NewButton("📴Invisibility FE📴", "📴Invisibility📴", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Invisible%20Gui'))()
+end)
+
+PlrSection:NewButton("🧲Fling All🧲", "🧲Fling All🧲", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+end)
+
+PlrSection:NewButton("🌫️FullBrightness🌫️", "🌫Invisibility🌫", function()
+    local Light = game:GetService("Lighting")
+ 
+function dofullbright()
+Light.Ambient = Color3.new(1, 1, 1)
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+end
+ 
+dofullbright()
+ 
+Light.LightingChanged:Connect(dofullbright)
+end)
+
+local TargetTab = Window:NewTab("Target")
+local TargetSection = TargetTab:NewSection("Target")
+
+local Player = game.Players.LocalPlayer
+local function findPlayer(playerName)
+  local players = game.Players:GetPlayers()
+  for _, player in pairs(players) do
+    if string.find(string.lower(player.Name), string.lower(playerName), 1, true) then
+      return player
+    end
+  end
+
+  return nil
+end
+
+local toggleFling = false
+local toggleStand = false
+local toggleView = false
+local toggleBenx = false
+
+local playerName
+local Target
+local DisplayTarget
+
+local function ToggleFling(bool)
+	task.spawn(function()
+		if bool then
+			local RVelocity = nil
+			repeat
+				pcall(function()
+					RVelocity = Player.Character.HumanoidRootPart.Velocity 
+					Player.Character.HumanoidRootPart.Velocity = Vector3.new(math.random(-200,200),-25000,math.random(-200,200))
+					game:GetService("RunService").RenderStepped:wait()
+					Player.Character.HumanoidRootPart.Velocity = RVelocity
+				end)
+				game:GetService("RunService").Heartbeat:wait()
+			until toggleFling == false
+		end
+	end)
+end
+
+local function PlayAnim(id,time,speed)
+	pcall(function()
+		Player.Character.Animate.Disabled = false
+		local hum = Player.Character.Humanoid
+		local animtrack = hum:GetPlayingAnimationTracks()
+		for i,track in pairs(animtrack) do
+			track:Stop()
+		end
+		Player.Character.Animate.Disabled = true
+		local Anim = Instance.new("Animation")
+		Anim.AnimationId = "rbxassetid://"..id
+		local loadanim = hum:LoadAnimation(Anim)
+		loadanim:Play()
+		loadanim.TimePosition = time
+		loadanim:AdjustSpeed(speed)
+		loadanim.Stopped:Connect(function()
+			Player.Character.Animate.Disabled = false
+			for i, track in pairs (animtrack) do
+        		track:Stop()
+    		end
+		end)
+	end)
+end
+
+local function StopAnim()
+	Player.Character.Animate.Disabled = false
+    local animtrack = Player.Character.Humanoid:GetPlayingAnimationTracks()
+    for i, track in pairs (animtrack) do
+        track:Stop()
+    end
+end
+
+local labelTarget = TargetSection:NewLabel("FullName: "..Player.Name.." | DisplayName: "..Player.DisplayName)
+
+TargetSection:NewButton("👆 Click Target 👆","CLick player to select target", function()
+   local GetTargetTool = Instance.new("Tool")
+	GetTargetTool.Name = "ClickTarget"
+	GetTargetTool.RequiresHandle = false
+	GetTargetTool.TextureId = "rbxassetid://2716591855"
+	GetTargetTool.ToolTip = "Select Target"
+
+	local function ActivateTool()
+		local root = Player.Character.HumanoidRootPart
+		local hit = Player:GetMouse().Target
+		local person = nil
+		if hit and hit.Parent then
+			if hit.Parent:IsA("Model") then
+				person = game.Players:GetPlayerFromCharacter(hit.Parent)
+			elseif hit.Parent:IsA("Accessory") then
+				person = game.Players:GetPlayerFromCharacter(hit.Parent.Parent)
+			end
+			if person then
+            Target = person.Name
+            DisplayTarget = person.DisplayName
+            labelTarget:UpdateLabel("FullName: "..Target.." | DisplayName: "..DisplayTarget)
+			end
+		end
+	end
+
+	GetTargetTool.Activated:Connect(function()
+		ActivateTool()
+	end)
+	GetTargetTool.Parent = Player.Backpack
+end)
+
+TargetSection:NewTextBox("🔍 Find Target 🔍", "Enter player to use esp", function(target)
+   playerName = target
+   local similarPlayer = findPlayer(playerName)
+   if similarPlayer then
+      if similarPlayer.Name ~= Player.Name then
+         Target = similarPlayer.Name
+         DisplayTarget = similarPlayer.DisplayName
+         labelTarget:UpdateLabel("FullName: "..Target.." | DisplayName: "..DisplayTarget)
+         local CoreGui = game:GetService("StarterGui")
+         CoreGui:SetCore("SendNotification", {
+             Title = similarPlayer.Name,
+             Text = "Name: "..similarPlayer.DisplayName,
+             Icon = "rbxthumb://type=AvatarHeadShot&id="..Player.Parent[Target].CharacterAppearanceId.."&w=100&h=100",
+             Duration = 5,
+             Callback = AllowRunServiceBind,
+         })
+      end
+   else
+      Target = nil
+      labelTarget:UpdateLabel("Player not found")
+      local CoreGui = game:GetService("StarterGui")
+      CoreGui:SetCore("SendNotification", {
+         Title = "Player not found",
+         Text = "Name: Invalid",
+         Icon = "rbxthumb://type=AvatarHeadShot&id="..Player.CharacterAppearanceId.."&w=100&h=100",
+         Duration = 5,
+         Callback = AllowRunServiceBind,
+      })
+   end
+ end)
+
+local labelTarget = TargetSection:NewLabel("Target Function")
+
+local labelTarget = TargetSection:NewLabel("For All Games")
+
+TargetSection:NewButton("📕 Copy FullName 📕","Копирует полное имя игрока", function()
+   if DisplayTarget ~= nil then 
+      setclipboard(DisplayTarget)
+   end
+end)
+
+TargetSection:NewButton("📒 Copy DisplayName 📒","Копирует дислей имя игрока", function()
+   if Target ~= nil then 
+      setclipboard(Target)
+   end
+end)
+
+TargetSection:NewButton("✔ Teleport Target ✔","Toggle to view player", function()
+   if Target ~= nil then
+      Player.Character.HumanoidRootPart.CFrame = Player.Parent[Target].Character.HumanoidRootPart.CFrame
+   end
+end)
+
+TargetSection:NewButton("👁️ View Target 👁️","Toggle to view player", function()
+   if toggleView == false then
+      if Target ~= nil then
+         toggleView = true
+         game.Workspace.CurrentCamera.CameraSubject = Player.Parent[Target].Character.Humanoid
+      end
+   else
+      toggleView = false
+      game.Workspace.CurrentCamera.CameraSubject = Player.Character.Humanoid
+   end
+end)
+
+TargetSection:NewButton("🧲 Fling Target 🧲","Toggle to fling player", function()
+   if toggleFling == false then
+      if Target ~= nil then
+         toggleFling = true
+         local OldPos = Player.Character.HumanoidRootPart.Position
+			ToggleFling(true)
+			repeat 
+            task.wait()
+				pcall(function()
+					Player.Character.HumanoidRootPart.CFrame = Player.Parent[Target].Character.HumanoidRootPart.CFrame
+				end)
+				task.wait()
+			until toggleFling == false
+			Player.Character.HumanoidRootPart.CFrame = OldPos
+         ToggleFling(false)
+      end
+   else
+      toggleFling = false
+   end
+end)
+
+
+TargetSection:NewButton("👥 Stand Head Target 👥","Toggle to stand head your player", function()
+   if toggleBenx == false then
+      if Target ~= nil then
+         toggleBenx = true
+         PlayAnim(591872667,0,1)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,5,0.0)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleBenx == false
+         StopAnim()
+      end
+   else
+      toggleBenx = false
+   end
+end)
+
+
+
+TargetSection:NewButton("🛶 Platform Player Target 🛶","Toggle to platform player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(59126674,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,-2,0)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(1.58, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+TargetSection:NewButton("⚔️ Kill Player Target ⚔️","Toggle to platform player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(59126674,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,-5,0)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(1.58, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+
+local labelTarget = TargetSection:NewLabel("R15 Target")
+
+
+TargetSection:NewButton("👤 Stand Target (R15) 👤","Toggle to stand player", function()
+   if toggleStand == false then
+      if Target ~= nil then
+         toggleStand = true
+         PlayAnim(13823324057,4,0)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-3,1,0)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleStand == false
+         StopAnim()
+      end
+   else
+      toggleStand = false
+   end
+end)
+
+TargetSection:NewButton("👤 Stand Target V2 (R15) 👤","Toggle to stand player", function()
+   if toggleStand == false then
+      if Target ~= nil then
+         toggleStand = true
+         PlayAnim(10714389396,1,0)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-3.5,0,0.5)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleStand == false
+         StopAnim()
+      end
+   else
+      toggleStand = false
+   end
+end)
+
+
+TargetSection:NewButton("👤 Stand Target V3 (R15) 👤","Toggle to stand player", function()
+   if toggleStand == false then
+      if Target ~= nil then
+         toggleStand = true
+         PlayAnim(12507085924,5,0)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-3.5,3,0)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleStand == false
+         StopAnim()
+      end
+   else
+      toggleStand = false
+   end
+end)
+
+
+
+TargetSection:NewButton("👤 Stand Target V4 (R15) 👤","Toggle to stand player", function()
+   if toggleStand == false then
+      if Target ~= nil then
+         toggleStand = true
+         PlayAnim(10714347256,4,0)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-3.5,1,1)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleStand == false
+         StopAnim()
+      end
+   else
+      toggleStand = false
+   end
+end)
+
+
+TargetSection:NewButton("👙 Bang Target (R15) 👙","Toggle to bang player", function()
+   if toggleBenx == false then
+      if Target ~= nil then
+         toggleBenx = true
+         PlayAnim(5918726674,0,1)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,0,1.1)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleBenx == false
+         StopAnim()
+      end
+   else
+      toggleBenx = false
+   end
+end)
+
+
+TargetSection:NewButton("⚠️ Face Bang Target (R15) ⚠️","Toggle to bang player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(5918726674,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,2,-1.5)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(180), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+
+TargetSection:NewButton("🐶 Doggy Target (R15) 🐶","Toggle to doggy player", function()
+   if toggleBenx == false then
+      if Target ~= nil then
+         toggleBenx = true
+         PlayAnim(13694096724,3.4,0)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,-0.5,0)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleBenx == false
+         StopAnim()
+      end
+   else
+      toggleBenx = false
+   end
+end)
+
+
+TargetSection:NewButton("🎆 Dance Head Target (R15) 🎆","Toggle to dance player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(10214311282,1,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,5,0)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+
+TargetSection:NewButton("🧙 Chill Fly Target (R15) 🧙","Toggle to chill fly player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(15549124879,4,0)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-3,6,-5)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+TargetSection:NewButton("🎩 Dance WTF Target (R15) 🎩","Toggle to Dance WTF player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(15609995579,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,2,-4)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(3.16, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+TargetSection:NewButton("🪐 Aura Head Target (R15) 🪐","Toggle to Aura Head your player", function()
+   if toggleBenx == false then
+      if Target ~= nil then
+         toggleBenx = true
+         PlayAnim(12507085924,5,0)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,7,0.0)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleBenx == false
+         StopAnim()
+      end
+   else
+      toggleBenx = false
+   end
+end)
+
+TargetSection:NewButton("🏆Meme Walk To Player (R15)🏆","Toggle to walk your player", function()
+   if toggleBenx == false then
+      if Target ~= nil then
+         toggleBenx = true
+         PlayAnim(18537384940,0,1)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,0,7.0)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleBenx == false
+         StopAnim()
+      end
+   else
+      toggleBenx = false
+   end
+end)
+
+
+TargetSection:NewButton("🔄Inverse Bang (R15)🔄","Toggle to inverse bang", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(18537363391,0,6)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,-1.5,-3)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(1.58, math.rad(0), 3)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+TargetSection:NewButton("🟦Sonic Pet🟦","Toggle to sonic pet your player", function()
+   if toggleBenx == false then
+      if Target ~= nil then
+         toggleBenx = true
+         PlayAnim(18537367238,0,1)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-4,0,3)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleBenx == false
+         StopAnim()
+      end
+   else
+      toggleBenx = false
+   end
+end)
+
+
+local labelTarget = TargetSection:NewLabel("R6 Target")
+
+
+TargetSection:NewButton("👙 Bang Target (R6) 👙","Toggle to bang player", function()
+   if toggleBenx == false then
+      if Target ~= nil then
+         toggleBenx = true
+         PlayAnim(148840371,0,6)
+         repeat
+            pcall(function()
+               local root = Player.Parent[Target].Character.HumanoidRootPart
+               Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,0,1.1)
+               Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            end)
+            task.wait()
+         until toggleBenx == false
+         StopAnim()
+      end
+   else
+      toggleBenx = false
+   end
+end)
+
+
+TargetSection:NewButton("⛔ Face Bang Target (R6) ⛔","Toggle to bang player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(148840371,0,6)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,1.5,-1.5)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(180), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+TargetSection:NewButton("🎒 Backpack Target (R6) 🎒","Toggle to bang player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(178130996,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,0,1)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(180), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+TargetSection:NewButton("🔰 Walk WTH Target (R6) 🔰","Toggle to walk WTF player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(180426354,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-3,2,-4)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(3.16, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+TargetSection:NewButton("🐶 Head Pet Target (R6) 🐶","Toggle to Head Pet player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(121572214,3,0)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-3,-5.5,3)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+TargetSection:NewButton("🎩 Dance WTH Target (R6) 🎩","Toggle to walk WTF player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(27789359,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,2,-4)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(3.16, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+TargetSection:NewButton("💧 Face Mastur (R6) 💧","Toggle to Face Mastur player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(54144120,0,17)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,2.5,-2.5)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(180), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+TargetSection:NewButton("🪑 Head Sit (R6) 🪑","Toggle to head sit player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(178130996,0,1)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(0,3.5,0.6)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+
+TargetSection:NewButton("🦰 Headless Target (R6) 🦰","Toggle to Headless Target player", function()
+   if toggleBenx == false then
+   if Target ~= nil then
+      toggleBenx = true
+      PlayAnim(35154961,3,0)
+      repeat
+         pcall(function()
+            local root = Player.Parent[Target].Character.HumanoidRootPart
+            Player.Character.HumanoidRootPart.CFrame = root.CFrame * CFrame.new(-1.2,-1.1,3.1)
+            Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+            -- Поворот на 90 градусов по часовой стрелке
+            Player.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(0), 0)
+         end)
+         task.wait()
+      until toggleBenx == false
+      StopAnim()
+   end
+else
+   toggleBenx = false
+end
+end)
+
+local TargetSection = TargetTab:NewSection("Esp")
+TargetSection:NewLabel("Settings Esp")
+
+local ESPcolor = Color3.fromRGB(255,0,0)
+local EspTransparency = 0.5
+
+TargetSection:NewColorPicker("🟥 ESP Color 🟥","Set you esp color",ESPcolor, function(color)
+  for i, player in pairs(game.Players:GetPlayers()) do
+    if player.Character:FindFirstChild("Esp") then
+      if player ~= game.Players.LocalPlayer then
+          player.Character:FindFirstChild("Esp").FillColor = color
+      end
+    end
+  end
+  ESPcolor = color
+end)
+
+TargetSection:NewSlider("⬜ ESP Transparency ⬜", "Set you transparency", 100, 1, function(s)
+  s = s * 0.01
+  wait(0.05)
+  for i, player in pairs(game.Players:GetPlayers()) do
+    if player.Character:FindFirstChild("Esp") then
+      if player ~= game.Players.LocalPlayer then
+          player.Character:FindFirstChild("Esp").FillTransparency = s
+      end
+    end
+  end
+  EspTransparency = s
+end)
+
+TargetSection:NewLabel("Enabled / Disabled")
+
+TargetSection:NewButton("🟩 ESP Target 🟩", "Click player to use esp target", function()
+   if Target ~= nil then
+      if Player.Parent[Target] then
+         if not Player.Parent[Target].Character:FindFirstChild("Esp") then
+            local esp = Instance.new("Highlight", Player.Parent[Target].Character)
+            esp.FillColor = ESPcolor
+            esp.FillTransparency = EspTransparency
+            esp.Enabled = true
+            esp.Name = "Esp"
+         else
+            Player.Parent[Target].Character:FindFirstChild("Esp"):Destroy()
+         end
+      end
+   end
+end)
+
+TargetSection:NewToggle("🟦 ESP All 🟦", "Toggle Esp to use all", function(toggle)
+ if toggle then
+  _G.ESPbyTami4ka = true
+  ESP = game:GetService("RunService").RenderStepped:Connect(function()
+    for i, player in pairs(game.Players:GetPlayers()) do
+      if not player.Character:FindFirstChild("Esp") then
+        if player ~= game.Players.LocalPlayer then
+            local esp = Instance.new("Highlight", player.Character)
+            esp.FillColor = ESPcolor
+            esp.FillTransparency = EspTransparency
+            esp.Enabled = true
+            esp.Name = "Esp"
+            wait(0.05)
+        end
+      end
+    end
+  end)
+  repeat task.wait() until _G.ESPbyTami4ka == false
+  ESP:Disconnect()
+ else
+  _G.ESPbyTami4ka = false
+  for i, player in pairs(game.Players:GetPlayers()) do
+    if player.Character:FindFirstChild("Esp") then
+      if player ~= game.Players.LocalPlayer then
+          player.Character:FindFirstChild("Esp"):Destroy()
+      end
+    end
+  end
+ end
+end)
+
+local OthersTab = Window:NewTab("Script-Helper")
+local OthersSection = OthersTab:NewSection("Some Scripts Need To Function In The Real Game")
+OthersSection:NewTextBox("💾Script Executor💾","Execute Scripts", function(txt)
+loadstring(txt)()
+end)
+
+OthersSection:NewButton("🔳AvtorSploit🔳", "🔳AvtorSploit🔳", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/AvtorSploit/main/AvtorSploit"))()
+end)
+
+OthersSection:NewButton("👀Script Obfuscator👀", "", function()
+
+loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script20")
+end)
+
+OthersSection:NewButton("💻Remote Spy V2💻", "Make Fe Script or any script", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/BaconBossScript/Crazy/main/Crazy'),true))()
+end)
+
+OthersSection:NewButton("🛠️Script Maker🛠️", "🛠️Script Maker🛠️", function()
+   loadstring(game:HttpGet(('https://pastefy.app/EOgPqinS/raw'),true))()
+--Requires 30% Experience creating scripts
+end)
+
+OthersSection:NewButton("🖥️Turtle Spy🖥️", "Make Fe Script or any script", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Podroka626/Scripts/main/Turtle%20Spy.txt"))()
+end)
+
+OthersSection:NewButton("🧾Simple Spy🧾", "Make Fe Script or any script", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/FxB4Qj2g",true))()
+end)
+
+OthersSection:NewButton("📝CMD-X📝", "Admin Commands", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))()
+end)
+
+OthersSection:NewButton("📠Dex 2.0.0📠", "Better then dex 4 if your in mobile", function()
+loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
+end)
+
+OthersSection:NewButton("📛Rc7 Executor📛", "📛Rc7 Executor📛", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CoreGui/Scripts/main/RC7"))()
+end)
+
+OthersSection:NewButton("🌐Neptune Executor🌐", "", function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/y3jhxS5r'))()
+end)
+
+OthersSection:NewButton("💬Chat Executor💬", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/chat-executor/main/chat-executor",true))()
+end)
+
+OthersSection:NewButton("🦺Backdoor Executor🦺", "", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/PXAdj6ED"))();
+end)
+
+OthersSection:NewButton("💯Forgor Executor💯", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/un_ForgorExecutor", true))()
+end)
+
+OthersSection:NewButton("📓Scripts Executor📓", "", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/yGxeT8zC", true))()
+end)
+
+OthersSection:NewButton("🟪Cubix Executor V 1.2🟪", "🟪Cubix Executor🟪", function()
+
+loadstring(game:HttpGet("https://github.com/1dontgiveaf/testscript69/raw/main/Cubix", true))()
+end)
+
+OthersSection:NewButton("🟦Old Delta Executor🟦", "", function()
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Delta-X-Executor-10319"))()
+end)
+
+
+OthersSection:NewButton("🟥Arceus X Executor🟥", "🟥Arceus X Executor🟥", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
+end)
+
+OthersSection:NewButton("🟪Fluxus Executor🟪", "🟪Fluxus Executor🟪", function()
+
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fluxus-Coral-ReMake-Beta-by-AnyaDev-8562"))()
+end)
+
+OthersSection:NewButton("⬛KRNL Executor⬛", "⬛KRNL Executor⬛", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wtfplayer/redemption/main/krnlnoui.lua"))()
+end)
+
+OthersSection:NewButton("🟥Codex Executor🟥", "🟥Codex Executor🟥", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FurkyYT/stuff/main/mainAndroid"))()
+end)
+
+OthersSection:NewButton("🟧Vega Executor🟧", "🟧Vega Executor🟧", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FOGOTY/vega/main/vega"))()
+end)
+
+OthersSection:NewButton("🟨Evon Executor🟨", "🟨Evon Executor🟨", function()
+
+executecode(game:HttpGet("https://raw.githubusercontent.com/SkieAdmin/EvonAndroidGUI/main/EvonRBLX.lua"))
+end)
+
+OthersSection:NewButton("🟦Trigon Executor🟦", "🟦Trigon Executor🟦", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FOGOTY/trigon/main/trigon"))()
+end)
+
+OthersSection:NewButton("🟪Solara Executor🟪", "", function()
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Solara-Old-Ui-remaked-13754"))()
+end)
+
+OthersSection:NewButton("🟦JJSploit Executor🟦", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FOGOTY/jjsploit-ui/main/skiddable"))()
+end)
+
+
+local OthersTab = Window:NewTab("Universal")
+local OthersSection = OthersTab:NewSection("Universall")
+
+OthersSection:NewButton("🌫Custom Fly Gui🌫", "🌫System Fly Gui🌫", function()
+   loadstring(game:HttpGet("https://pastefy.app/M0N30XXG/raw"))("t.me/arceusxscripts");
+end)
+
+OthersSection:NewButton("👑Infinite yield Reborn👑", "👑Infinite yield Reborn👑", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+OthersSection:NewButton("📛Anti Bang/Fling📛", "Anti bang and fling", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/RQXk2Qqi"))()
+end)
+
+
+OthersSection:NewButton("📱OLD ROBLOX UI (mobile)📱", "👑Infinite yield Reborn👑", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Avtor1zaTion/OldRoblox/main/OldRoblox'),true))()
+end)
+
+OthersSection:NewButton("🤙FE Ring Parts V3 (BEST)🤙", "", function()
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-Super-ring-parts-V3-cracked-24408"))()
+end)
+
+OthersSection:NewButton("👹FE Headless (R6)👹", "", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Gazer-Ha/Valiant-Ui-Lib-Gazed-/refs/heads/main/Head%20Pack'))()
+end)
+
+OthersSection:NewButton("🗿FE Masturbation🗿", "", function()
+
+loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))("Spider Script")
+end)
+
+OthersSection:NewButton("🪩FE Dance Tool🪩", "", function()
+
+loadstring(game:HttpGet("https://gist.githubusercontent.com/ocfi/a9eebe4bffd19014263551ba10c50f3e/raw/359e6e6cfe7d0ee34304cbc50b14a34d54405db0/Wait%2520They%2520Dont%2520Love%2520You%2520Like%2520I%2520Love%2520You%2520Animation%2520Emote.lua"))()
+end)
+
+OthersSection:NewButton("😈FE GAle Figher (R6)😈", "", function()
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Fighter-inspired-by-Gale-21557"))()
+end)
+
+OthersSection:NewButton("🤬FE G-MAN🤬", "", function()
+
+_G.clientsidedeffect = true --set it to false if you don't want the effect
+loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/Qwerty/refs/heads/main/qwerty18.lua"))()
+end)
+
+OthersSection:NewButton("💫Player Orbit💫", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()
+end)
+
+OthersSection:NewButton("👀FE Illusion Player👀", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe/main/obf_11l7Y131YqJjZ31QmV5L8pI23V02b3191sEg26E75472Wl78Vi8870jRv5txZyL1.lua.txt"))()
+end)
+
+OthersSection:NewButton("🛠️Tool Gui🛠️", "", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/ZvstfPXM"))()
+end)
+
+OthersSection:NewButton("👍Teleport To Fling Player👍", "", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/gMSmu1WH"))()
+end)
+
+OthersSection:NewButton("🖌Chat Draw(FIXED)🖌", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ocfi/Draw-To-Chat-Obfuscated/refs/heads/main/Draw%20to%20Chat"))()
+end)
+
+
+OthersSection:NewButton("🌛Legit Wall Hop🌜", "", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/s9dWyp6n",true))()
+end)
+
+OthersSection:NewButton("🌹FE Touch Fling🌹", "", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/rfKaavP3"))()
+end)
+
+OthersSection:NewButton("💣FE Cannon Ball💣", "", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Cannon%20Ball'))()
+end)
+
+OthersSection:NewButton("✅Saved Servers✅", "", function()
+
+loadstring(game:HttpGet(('https://pastefy.app/S7xNJSXX/raw'),true))()
+end)
+
+OthersSection:NewButton("💿FE Change Avatar Outfits💿", "", function()
+
+--AvtorScripts--
+loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script18")
+end)
+
+OthersSection:NewButton("👹Saken Kok R15👹", "", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/nv8DRdFK"))()
+end)
+
+OthersSection:NewButton("🗿FE R6 Animation🗿", "", function()
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-R6-Animations-Menu-By-Me-19427"))()
+end)
+
+OthersSection:NewButton("🚗Car Fly🚗", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S33dedL0rdz/-Unknown-Roblox-Vfly-Script-.file/main/Rbxscript.c"))()
+end)
+
+OthersSection:NewButton("🚫FE Ring Parts🚫", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SAZXHUB/SUPER_RING_V2_BY_CAT_DEV/refs/heads/main/README.md"))()
+end)
+
+OthersSection:NewButton("🛠️FE MultiTool🛠️", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/MultiToolsV1/main/script"))()
+end)
+
+OthersSection:NewButton("🌈Rainbow Keyboard🌈", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
+end)
+
+OthersSection:NewButton("🛏️FE FALL GUI🛏️", "", function()
+
+--T.me/AvtorScripts--
+loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()
+end)
+
+OthersSection:NewButton("🫂FE HOG GUI🫂", "", function()
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Hug-Gui-R6-17818"))()
+end)
+
+OthersSection:NewButton("💎FE Telekinesis💎", "", function()
+
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/randomstring0/Qwerty/refs/heads/main/qwerty11.lua"))()
+end)
+
+OthersSection:NewButton("👀FE Mewing Head👀", "", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Gazer-Ha/Valiant-Ui-Lib-Gazed-/refs/heads/main/Head%20Down'))()
+end)
+
+OthersSection:NewButton("🪩FE Parkour Flips🪩", "", function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/yjxXnxbS'))()
+end)
+
+OthersSection:NewButton("🔐FE Destroy Delay🔐", "", function()
+
+while true do
+wait(0,3)
+for i,v in ipairs(game:GetService("Workspace"):GetDescendants()) do if v.ClassName == "ProximityPrompt" then v.HoldDuration = 0 end end
+end
+end)
+
+OthersSection:NewButton("⬛Modifier Gui⬛", "", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Modifier%20Gui'))()
+end)
+
+OthersSection:NewButton("⚫BRING PART⚫", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/main/BringFlingPlayers"))()
+end)
+
+OthersSection:NewButton("👀Universal Chat Spy👀", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/Chat-Spy/main/Chat%20Spy"))()
+end)
+
+
+OthersSection:NewButton("🖥unlock cells tools/изменить кол-во ячеек tools🖥", "change cells tools as on pc", function()
+ getgenv().slots = ( 11 ) --[[ default ]]--
+loadstring(game:HttpGet([[https://raw.githubusercontent.com/rrixh/uwuware/main/Kustom/mobile5lots]],false))
+end)
+
+OthersSection:NewButton("🔶Admin Panel🔶", "🔶Admin Panel🔶", function()
+    loadstring(game:HttpGet(('https://pastefy.app/Oic24KzG/raw'),true))()
+end)
+
+OthersSection:NewButton("📍Server Finder📍", "📍Server Finder📍", function()
+loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))()
+end)
+
+OthersSection:NewButton("📱растяг экрана📱", "📱растяг экрана📱", function()
+   loadstring(game:HttpGetAsync("https://pastefy.app/xpZROojp/raw"))()
+end)
+
+OthersSection:NewButton("🚹Big Jump Button🚹", "Big Junp Button", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/p3TfEqQ2"))()
+end)
+
+OthersSection:NewButton("♾️Energize Remake♾️", "♾️Energize Remake♾️", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/vbJsvU0L"))()
+end)
+
+OthersSection:NewButton("💨Blur Amount💨", "💨Blur Amount💨", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/7gB5LAsj"))()
+end)
+
+OthersSection:NewButton("💫Pshade Reborn💫", "💫Pshade Reborn💫", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/pzDZtE59"))()
+end)
+
+OthersSection:NewButton("🌐Hitbox Changer🌐", "🌐Hitbox Changer🌐", function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/ECkKyETV'),true))()
+end)
+
+OthersSection:NewButton("🗨Long Message🗨", "🗨Long Message🗨", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/WPHVj8Lj"))()
+end)
+
+OthersSection:NewButton("👁️‍🗨️Universall Fly Camera👁️‍🗨️", "👁️‍🗨️Universal Fly Camera👁️‍🗨️", function()
+loadstring(game:HttpGet(('https://pastefy.app/9CDN9Kaj/raw'),true))()
+end)
+
+OthersSection:NewButton("🐇Universall BunnyHop🐇", "🐇Universall BunnyHop🐇", function() loadstring(game:HttpGetAsync("https://pastebin.com/raw/TfLPRpue"))()
+end)
+
+OthersSection:NewButton("🧿Tween Teleporter🧿", "🧿Tween Teleporter🧿", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/main/TweenTeleporter"))()   
+end)
+
+OthersSection:NewButton("🟨RTX Yellow🟨", "🟨RTX Yellow🟨", function() loadstring(game:HttpGetAsync("https://pastebin.com/raw/R8Db9XZ3"))()
+end)
+
+OthersSection:NewButton("🌫Fling Gui🌫", "🌫Fling Gui🌫", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+end)
+OthersSection:NewButton("👤Animation Hub👤", "👤Animation Hub👤", function()
+   loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script9")
+end)
+
+OthersSection:NewButton("🌍ходьба по стенам🌍", "🌍ходьба по стенам🌍", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+end)
+
+OthersSection:NewButton("☀️Sun Controll☀️", "☀️Sun Controll☀️", function()
+   loadstring(game:HttpGet(('https://pastefy.app/oi4CGDzs/raw'),true))()
+end)
+
+OthersSection:NewButton("💧FE Player Lifter💧", "💧FE Player Lifter💧", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/kwiawU63"))()   
+end)
+
+OthersSection:NewButton("🟪Pink RTX🟪", "🟪Pink RTX🟪", function()
+   loadstring(game:HttpGet(('https://pastefy.app/cAySDj1Q/raw'),true))()
+end)
+
+OthersSection:NewButton("🔳Change Delta Icon🔳", "🔳Change Delta Icon🔳", function()
+
+game.CoreGui.DeltaIcon.ImageButton.Image = "rbxassetid://14890616326"
+game.CoreGui.DeltaIcon.ImageButton.UIStroke.Color = Color3.fromRGB(0, 0, 0)  
+end)
+OthersSection:NewButton("🌀Universall ShiftLock🌀", "🌐Universall ShiftLock🌐", function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/gSrbeNsB'))();
+end)
+
+OthersSection:NewButton("🌈Chat Rainbow🌈", "🌈Chat Rainbow🌈", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/AE4UMXdt'),true))()
+end)
+
+OthersSection:NewButton("🌀Flashback🌀", "🌀Flashback🌀", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/L"))()
+end)
+
+OthersSection:NewButton("⬛Ghost Hub⬛", "⬛Ghost Hub⬛", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+end)
+
+OthersSection:NewButton("☠️FE Player Spin☠️", "☠️FE Player Spin☠️", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/4KGZWPip'),true))()
+end)
+
+OthersSection:NewButton("🎯Zoom Camera🎯", "🎯Zoom Camera🎯", function()
+   loadstring(game:HttpGet(('https://pastefy.app/Rmbg6Zxh/raw'),true))()
+end)
+
+OthersSection:NewButton("📝FE Chat Controller📝", "📝FE Chat Controller📝", function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/MdSA4fn5'))()
+end)
+
+OthersSection:NewButton("⌨️Keyboard⌨️", "⌨️Keyboard⌨️", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+OthersSection:NewButton("🟦Game Hub🟦", "🟦Game Hub🟦", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
+end)
+
+OthersSection:NewButton("❤️‍🔥RTX❤️‍🔥", "❤️‍🔥RTX❤️‍🔥", function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/Bkf0BJb3'))()
+end)
+
+OthersSection:NewButton("💊Realistic First Person💊", "💊Realistic First PReson💊", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/qNkSxqux'),true))()
+end)
+
+OthersSection:NewButton("👥Tp To Player👥", "👥Tp To Player👥", function()
+   loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
+end)
+
+OthersSection:NewButton("🗑Drop Tool🗑", "🗑Drop Tool🗑", function()
+   loadstring(game:HttpGet("https://pastefy.app/9tz4N8DF/raw"))()
+end)
+
+OthersSection:NewButton("⏰Stop Time⏰", "⏰Stop Time⏰", function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/djAd7g2W'))()
+end)
+
+OthersSection:NewButton("⬜FE Fake WallHop V1⬜", "⬜FE Fake WallHop V1⬜", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/mZ1g6F6E"))()
+end)
+
+OthersSection:NewButton("🅰FE Fake WallHop V2🅰", "🅰FE Fake WallHop V2🅰", function()
+   loadstring(game:HttpGet("https://pastefy.app/Tqe0KlAP/raw", true))()
+end)
+
+OthersSection:NewButton("❄SnowFlake❄", "❄SnowFlake❄", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/9AxRXEvJ'),true))()
+end)
+
+
+OthersSection:NewButton("🫂Universall Colizium🫂", "🫂Universall Colizium🫂", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/TJRmVqE3'),true))()
+end)
+
+OthersSection:NewButton("🔳NO FE Trail🔲", "🔳NO FE Trail🔲", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/rVNzWdwF'),true))()
+end)
+
+OthersSection:NewButton("👀Universall Spectate👀", "👀Universall Spectate👀", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/htJNjYXw'),true))()
+end)
+
+OthersSection:NewButton("🌠Ping+FPS🌠", "🌠Ping+FPS🌠", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/a0uXyDSE'),true))()
+end)
+
+OthersSection:NewButton("🈶Universall Delta Translate🈶", "🈶Universall Delta Translate🈶", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/b8yf9ik7"))()
+end)
+
+OthersSection:NewButton("👼R15 Angel Animation👼", "👼R15 Angel Animation👼", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/qrpWUg52'),true))()
+end)
+
+OthersSection:NewButton("🔄Bring Player Gui🔄", "🔄Bring Player Gui🔄", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/xVdPJ4QC'),true))()
+end)
+
+OthersSection:NewButton("🔝FE WallClimb🔝", "🔝FE WallClimb🔝", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe/main/obf_E872F3ky4888TSVdj6Adgi1hSLtM038AyxVpTVw07QA3QUDcI3sxmuD869hYR4id.lua.txt"))()
+end)
+
+OthersSection:NewButton("🔰Anti Virus Script🔰", "🔰Anti Virus Script🔰", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fortnitemodder/Https-Spy/main/Enhanced"))()
+end)
+
+OthersSection:NewButton("💫Насыщенная графика💫", "💫Насыщенная графика💫", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/Qcdikwyj'),true))()
+end)
+
+OthersSection:NewButton("⬛Universal AimBot Fov V2 (Settings)⬛", "Universal Aimbot Fov Settings", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Equinox-Hub/main/aimbot.lua", true))()
+end)
+
+OthersSection:NewButton("🟪Universall FOV аимбот🟪", "🟪Universall FOV аимбот🟪", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/AimBot-Fov/main/Aimbot%20Fov", true))()
+end)
+
+OthersSection:NewButton("🟥Universall дальний аимбот🟥", "🟥Universall дальний аимбот🟥", function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/fsfeceqn'),true))()
+end)
+
+OthersSection:NewButton("🟦Universall ближний аимбот🟦", "", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/PlayerLock/main/Script",true))()
+end)
+
+OthersSection:NewButton("💠Universall WallHack💠", "💠Universall WallHack💠", function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
+end)
+
+OthersSection:NewButton("⬜Dex Explorer⬜", "⬜Dex Explorer⬜", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Avtor1zaTion/Dex-explorer/main/Dex%20explorer'),true))()
+end)
+
+OthersSection:NewButton("💧Fake Shaiders💧", "💧Fake Shaiders💧", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Avtor1zaTion/Universall-Shaders/main/Protected_3613004681565905.lua'),true))() 
+end)
+
+OthersSection:NewButton("👺FE Punch Tool👺", "👺FE Punch Tool👺", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fedoratums/Base-Script/Base-Script/fedoratum punch fling",true))()
+end)
+
+OthersSection:NewButton("👻FE Chat Breaker(Old)👻", "👻FE Chat Breaker(Old)👻", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/Chat-Breaker/main/Protected_5902323854612592.lua"))()
+end)
+
+OthersSection:NewButton("👻FE Chat Breaker(New)👻", "👻FE Chat Breaker(New)👻", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/Chat-Breaker-V2-NEW-CHAT-/main/Protected_9351429662169082.lua"))()
+end)
+
+OthersSection:NewButton("💨Fling Tool💨", "💨Fling Tool💨", function()
+
+loadstring(game:HttpGet(('https://pastefy.app/QI62apy6/raw'),true))()
+end)
+
+OthersSection:NewButton("⬛Camera Spy V1⬛", "⬛Camera Spy V1⬛", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script", true))()
+end)
+
+OthersSection:NewButton("🔥NO FE Boombox🔥", "🔥NO FE Boombox🔥", function()
+
+_G.boomboxb = game:GetObjects('rbxassetid://740618400')[1]
+_G.boomboxb.Parent = game:GetService'Players'.LocalPlayer.Backpack
+loadstring(_G.boomboxb.Client.Source)() 
+loadstring(_G.boomboxb.Server.Source)() --the original scripts made by roblox with minor changes.
+end)
+
+OthersSection:NewButton("🔅Realistic 3RD Camera🔅", "🔅Realistic 3RD Camera🔅", function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/BG3994qZ'))()
+end)
+
+OthersSection:NewButton("⚙️Universal Tas Maker⚙️", "⚙️Universal Tas Maker⚙️", function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/8rrPXjVs'))()
+end)
+
+OthersSection:NewButton("✨Shaiders Gui✨", "✨Shaiders Gui✨", function()
+
+loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+end)
+
+OthersSection:NewButton("💨Avtor Scripts Skybox💨", "💨Avtor Scripts Skybox💨", function()
+
+sky = Instance.new("Sky",game:GetService("Lighting"))
+sky.SkyboxBk = "http://www.roblox.com/asset/?id=14890616326"
+sky.SkyboxFt = "http://www.roblox.com/asset/?id=14890616326"
+sky.SkyboxLf = "http://www.roblox.com/asset/?id=14890616326"
+sky.SkyboxRt = "http://www.roblox.com/asset/?id=14890616326"
+sky.SkyboxUp = "http://www.roblox.com/asset/?id=14890616326"
+end)
+
+OthersSection:NewButton("💨Float Tool💨", "💨Float Tool💨", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/eexNNiSx'),true))()
+end)
+
+OthersSection:NewButton("❤️‍🔥Key Bind❤️‍🔥", "❤️‍🔥Key Bind❤️‍🔥", function()
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()
+end)
+
+OthersSection:NewButton("🚗FE Car Drift🚗", "🚗FE Car Drift🚗", function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/Avtor1zaTion/Drift-Car/main/Protected_9585695538801054.lua'),true))()
+end)
+
+OthersSection:NewButton("🟩Green Screen Gui🟩", "🟩Green Screen Gui🟩", function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Green%20Screen'))()
+end)
+
+OthersSection:NewButton("🛠️Super Tools🛠️", "gives you cool tools to use", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
+end)
+
+OthersSection:NewButton("⬛White And Black Shaider⬜", "🌠Ping+FPS🌠", function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/KvJDt5Zw'))()
+end)
+
+OthersSection:NewButton("🖱️Universal Cursor🖱️", "🖱️Universal Cursor🖱️", function()
+   loadstring(game:HttpGet(('https://pastefy.app/VPqgV9IN/raw'),true))()
+end)
+
+OthersSection:NewButton("👁️‍🗨️Universal Fly Camera👁️‍🗨️", "❤️‍🔥RTX❤️‍🔥", function()
+
+loadstring(game:HttpGet(('https://pastefy.app/9CDN9Kaj/raw'),true))()
+end)
+
+local OthersTab = Window:NewTab("Animation R15")
+local OthersSection = OthersTab:NewSection("Animation R15")
+
+OthersSection:NewButton("👍FE Animation Changer(BEST)👍", "", function()
+
+loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script9")
+end)
+
+OthersSection:NewButton("Bold Animation NEW", "Bold ANimation NEW", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=16738333868"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=16738334710"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=16738340646"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=16738337225"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=16738336650"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=16738332169"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=16738333171"
+game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "http://www.roblox.com/asset/?id=16738339158"
+game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "http://www.roblox.com/asset/?id=16738339817"
+end)
+
+OthersSection:NewButton("Adidas Sport NEW", "Adidas Sport NEW", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/VFBVQ6zb"))()
+end)
+
+OthersSection:NewButton("Vampire", "Vampire", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=1083445855"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=1083450166"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=1083473930"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=1083462077"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083455352"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083443587"
+end)
+
+OthersSection:NewButton("Hero", "Hero", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616111295"	game.Players.LocalPlayer.Character.Animate.idle.Animation2.game.Players.LocalPlayer.Character.AnimationId = "http://www.roblox.com/asset/?id=616113536"	game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616122287"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616117076"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616115533"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616104706"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616108001"
+end)
+
+OthersSection:NewButton("Zombie", "Zombie", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616158929"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616160636"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616161997"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616156119"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
+end)
+
+OthersSection:NewButton("Mage", "Mage", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=707742142"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=707855907"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=707897309"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=707861613"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=707853694"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=707826056"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
+end)
+
+OthersSection:NewButton("Ghost", "Ghost", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616006778"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616008087"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616010382"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616008936"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616003713"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616005863"
+end)
+
+OthersSection:NewButton("Elder", "Elder", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=845397899"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=845400520"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=845403856"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=845386501"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=845398858"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=845392038"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=845396048"
+end)
+
+OthersSection:NewButton("Levitation", "Levitation", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616006778"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616008087"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616010382"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616008936"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616003713"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616005863"
+end)
+
+OthersSection:NewButton("Astronaut", "Astronaut", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=891621366"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=891633237"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=891667138"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=891636393"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=891627522"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=891609353"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=891617961"
+end)
+
+OthersSection:NewButton("Ninja", "Ninja", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=656117400"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=656118341"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=656121766"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=656118852"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=656117878"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=656114359"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=656115606"
+end)
+
+OthersSection:NewButton("WereWolf", "WereWolf", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=1083195517"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=1083214717"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=1083178339"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=1083216690"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083182000"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083189019"
+end)
+
+OthersSection:NewButton("Cartoon", "Cartoon", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=742637544"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=742638445"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=742640026"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=742638842"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=742637942"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=742636889"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=742637151"
+end)
+
+OthersSection:NewButton("Pirate", "Pirate", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=750781874"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=750782770"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=750785693"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=750783738"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=750782230"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=750779899"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=750780242"
+end)
+
+OthersSection:NewButton("Toy", "Toy", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=782843345"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=782842708"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=782847020"
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=782843869"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=782846423"
+end)
+
+OthersSection:NewButton("Angel", "Angel", function()
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921350320"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921350320"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921136539"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921293373"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921160088"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921040576"
+end)
+
+local OthersTab = Window:NewTab("NO FE Scripts")
+local OthersSection = OthersTab:NewSection("NO FE Scripts")
+
+
+OthersSection:NewButton("🧱NO FE Backrooms(wait 3 sec)🧱", "🧱NO FE Backrooms(wait 3 sec)🧱", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/p9XVCcuk'),true))()
+end)
+
+
+OthersSection:NewButton("📊Serverside Controll Player📊", "📊Serverside Controll Player📊", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/d26A6cAk'),true))()
+end)
+
+OthersSection:NewButton("NO FE Change Players", "", function()
+
+loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script13")
+end)
+
+OthersSection:NewButton("👀NO FE Ambient👀", "", function()
+
+loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script14")
+end)
+
+OthersSection:NewButton("📏NO FE Baldi📏", "📏NO FE Baldi📏", function()
+
+loadstring(game:HttpGet(('https://pastefy.app/GcSUxGF4/raw'),true))()
+end)
+
+OthersSection:NewButton("🟩Minecraft🟩", "🟩Minecraft🟩", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/zPvyBA7E'),true))()
+end)
+
+OthersSection:NewButton("🔫NO FE Suicide🔫", "🔫NO FE Suicide🔫", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/eziEnqs2'),true))()
+end)
+
+OthersSection:NewButton("🟦Sonic🟦", "🟪Pink RTX🟪", function()
+   --{{Made by Avtor}}--
+
+local p = game.Players.LocalPlayer
+local char = p.Character
+local larm = char["Left Arm"]
+local rarm = char["Right Arm"]
+local lleg = char["Left Leg"]
+local rleg = char["Right Leg"]
+local hed = char.Head
+local torso = char.Torso
+local hum = char.Humanoid
+local weld = Instance.new("Weld",torso)
+weld.Part0 = torso
+
+larm.Transparency = 1
+rarm.Transparency = 1
+lleg.Transparency = 1
+rleg.Transparency = 1
+hed.Transparency = 1
+torso.Transparency = 1
+
+
+local function unequipAccessories(player)
+    local character = player.Character
+    if character then
+        local humanoid = character:FindFirstChild("Humanoid")
+        if humanoid then
+            for _, accessory in pairs(humanoid:GetAccessories()) do
+                accessory:Destroy()
+            end
+        end
+    end
+end
+
+unequipAccessories(p)
+
+local train = Instance.new("Part",torso)
+train.Anchored = true
+train.CanCollide = false
+train.Size = Vector3.new(5,5,5)
+train.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld.Part1 = train
+weld.C1 = CFrame.new(0,-5.8,0) * CFrame.Angles(0,math.rad(0),0)
+train.Anchored = false
+local TrainMesh = Instance.new("SpecialMesh",train)
+TrainMesh.MeshType = Enum.MeshType.FileMesh
+TrainMesh.Offset = Vector3.new(0,-5,0)
+TrainMesh.Scale = Vector3.new(7, 7, 6)
+TrainMesh.MeshId = "rbxassetid://5330562519"
+TrainMesh.TextureId = "rbxassetid://5330562592"
+
+
+
+for i,v in pairs(char:GetChildren()) do
+ if v:IsA("Part") then
+  v.Transparency = 1;
+ elseif v:IsA("Hat") then
+  v:Destroy()
+ elseif v:IsA("Model") then
+  v:Destroy()
+ end
+end
+
+
+local function SFX(id) local s=Instance.new("Sound",torso); s.SoundId = "rbxassetid://"..id; s.Volume = 1; return s; end
+train.Touched:connect(function(p)
+ if p.Parent then
+  if p.Parent:IsA("Model") then
+   if game.Players:FindFirstChild(p.Parent.Name) then
+    if p.Parent.Name ~= game.Players.LocalPlayer.Name then
+     game.Players:FindFirstChild(p.Parent.Name).Character:BreakJoints()
+     local Whistle = SFX(15465429)
+     Whistle:Play()
+    end
+   end
+  end
+ end
+end)
+
+local Music = SFX(35894005)
+Music.Looped = true;
+wait(1)
+Music:Play();
+
+local particleemitter = Instance.new("ParticleEmitter", torso)
+particleemitter.VelocitySpread = 180
+particleemitter.Lifetime = NumberRange.new(5)
+particleemitter.Speed = NumberRange.new(6)
+particleemitter.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(1, 5)})
+particleemitter.RotSpeed = NumberRange.new(-55, 55)
+particleemitter.Rate = 150
+particleemitter.Rotation = NumberRange.new(-55, 55)
+particleemitter.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.7, 0.9), NumberSequenceKeypoint.new(1, 1)})
+particleemitter.LightEmission = 0
+particleemitter.Color = ColorSequence.new(Color3.new(255,255,255), Color3.new(255,255,255)) --Color here
+
+
+
+local plr = game.Players.LocalPlayer
+local chr = plr.Character
+local maus = plr:GetMouse()
+local PGui=plr.PlayerGui
+local lleg = chr["Left Leg"]
+local rleg = chr["Right Leg"]
+local larm = chr["Left Arm"]
+local rarm = chr["Right Arm"]
+local hed = chr.Head
+local rutprt = chr.HumanoidRootPart
+local torso = chr.Torso
+local pseudohead=hed:Clone()
+for i,x in pairs(pseudohead:GetChildren()) do if not x.ClassName:find('Mesh') then x:Destroy() end end
+pseudohead.Name='PseudoHead'
+pseudohead.Parent=chr.Head
+local pseudoweld=Instance.new('Weld',torso)
+pseudoweld.Part0=hed
+pseudoweld.Name='PseudoHeadWeld'
+pseudoweld.Part1=pseudohead
+hed.Transparency=1
+for i,x in pairs(chr:GetChildren()) do
+if x:IsA'HHat' then x:destroy'' end end
+for i,x in pairs(chr:GetChildren()) do
+for a,v in pairs(x:GetChildren()) do
+if v:IsA'CharacterMesh' then v:destroy''
+end
+end
+end
+end)
+
+OthersSection:NewButton("🟥Amogus🟥", "🟥Amogus🟥", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/CdDXY6uy'),true))()
+end)
+
+OthersSection:NewButton("🟪Fake Dominus (R6)🟪", "🟪Fake Dominus🟪", function()
+
+--{{Made by Avtor}}--
+
+local p = game.Players.LocalPlayer
+local char = p.Character
+local larm = char["Left Arm"]
+local rarm = char["Right Arm"]
+local lleg = char["Left Leg"]
+local rleg = char["Right Leg"]
+local hed = char.Head
+local torso = char.Torso
+local hum = char.Humanoid
+local weld = Instance.new("Weld",torso)
+weld.Part0 = torso
+
+local train = Instance.new("Part",torso)
+train.Anchored = true
+train.CanCollide = false
+train.Size = Vector3.new(5,5,5)
+train.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld.Part1 = train
+weld.C1 = CFrame.new(0.15,-6.5,0) * CFrame.Angles(0,math.rad(270),0)
+train.Anchored = false
+local TrainMesh = Instance.new("SpecialMesh",train)
+TrainMesh.MeshType = Enum.MeshType.FileMesh
+TrainMesh.Offset = Vector3.new(0,-5,0)
+TrainMesh.Scale = Vector3.new(1, 1, 1)
+TrainMesh.MeshId = "rbxassetid://4887144927"
+TrainMesh.TextureId = "rbxassetid://4887144975"
+end)
+
+local OthersSection = OthersTab:NewSection("👀Visual Accessories👀")
+
+
+OthersSection:NewTextBox("💾Your Custume (Enter Id)💾","", function(txt)
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = txt
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+OthersSection:NewButton("Blue Fire Horns", "Its No FE Blue Fire Horns", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 74891470
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Sparkling Angel Wings", "Angel Wings", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 192557913
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Dominus Frigidus", "Dominus Frigidus", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 48545806
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Dominus Formidulosus", "Dominus Formidulosus", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 4255053867
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Dominus Aureus", "Dominus Aureus", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 138932314
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Dominus Empyreus", "Dominus Empyreus", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 21070012
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Имморталиус Head", "Immortalius head", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 14868239852
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Mr Beast Head", "Mister Beast head", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 14120160551
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+OthersSection:NewButton("Red Fire Horns", "Red Fire Horns", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 215718515
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Failed Movie Star", "Failed Movie Star", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 16318177334
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Blackvalk", "Blackvalk", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 124730194
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Rainbow Shaggy", "Rainbow Shaggy", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 64082730
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Red Fire Horns", "Red Fire Horns", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 215718515
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Purple Sparkle Time Fedora", "Purple Sparkle Time Fedora", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 63043890
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Clockwork's Shades (очки)", "Clockwork's Shades", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 11748356
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Lua Statue", "Lua Statue", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 15285360934
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Roblox Tie", "Roblox Tie", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 31107926
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Sigma Head", "Sigma Head", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 12296702375
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("SIUUUU Head", "SIUUUU Head", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 12371013580
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Hasbulla Head", "Hasbulla Head", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 14167073275
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Anonymous Hacker Head", "Anonymous Hacker Head", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 13076304715
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Hacker Scythe", "Hacker Scythe", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 13752140525
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Scripts Chain: Gold", "Scripts Chain: Gold", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 13117720315
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("I ❤ Scripts Head", "I ❤ Scripts Head", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 15100575737
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("1x1's Bucket of Exploitations", "1x1's Bucket of Exploitations", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 17623259308
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+local OthersSection = OthersTab:NewSection("🕵️R15 Costumes🕵️")
+
+OthersSection:NewTextBox("💾Your Custume (Enter Id)💾","", function(txt)
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = txt
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+OthersSection:NewButton("Crawly", "", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 18299071709
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+OthersSection:NewButton("El Primo", "", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 18359198915
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+OthersSection:NewButton("Spike", "", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 18142219875
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+OthersSection:NewButton("Guard Suit", "", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 17774285416
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+OthersSection:NewButton("Floppa", "", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 17206244172
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+OthersSection:NewButton("Poo", "", function()
+
+function l(a, _)
+            local b = Instance.new("Weld")
+            b.Part0 = a.Parent
+            b.Part1 = _.Parent
+            b.C0 = a.CFrame
+            b.C1 = _.CFrame
+            b.Parent = a.Parent
+            return b
+        end
+        local function _(_, a, b, d, c, e)
+            local f = Instance.new("Weld")
+            f.Name = _
+            f.Part0 = b
+            f.Part1 = d
+            f.C0 = c
+            f.C1 = e
+            f.Parent = a
+            return f
+        end
+        local function a(_, b)
+            for _, _ in pairs(_:GetChildren()) do
+                if _:IsA("Attachment") and _.Name == b then
+                    return _
+                elseif not _:IsA("Accoutrement") and not _:IsA("Tool") then
+                    local _ = a(_, b)
+                    if _ then
+                        return _
+                    end
+                end
+            end
+        end
+        function k(e, c)
+            c.Parent = e
+            local d = c:FindFirstChild("Handle")
+            if d then
+                local b = d:FindFirstChildOfClass("Attachment")
+                if b then
+                    local _ = a(e, b.Name)
+                    if _ then
+                        l(_, b)
+                    end
+                else
+                    local e = e:FindFirstChild("Head")
+                    if e then
+                        local b = CFrame.new(0, 0.5, 0)
+                        local a = c.AttachmentPoint
+                        _("HeadWeld", e, e, d, b, a)
+                    end
+                end
+            end
+        end
+        local _ = 15645197933
+        local _ = game:GetObjects("rbxassetid://" .. tostring(_))[1]
+        k(game.Players.LocalPlayer.Character, _)
+end)
+
+
+local OthersTab = Window:NewTab("TP Placer")
+local OthersSection = OthersTab:NewSection("TP Placer")
+
+OthersSection:NewButton("✅Rejoin✅", "✅Rejoin✅", function()
+
+local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+
+
+ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p) 
+end)
+
+OthersSection:NewButton("✅SMALL SERVER✅", "", function()
+
+local Http = game:GetService("HttpService")
+local TPS = game:GetService("TeleportService")
+local Api = "https://games.roblox.com/v1/games/"
+
+local _place = game.PlaceId
+local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+function ListServers(cursor)
+  local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+  return Http:JSONDecode(Raw)
+end
+
+local Server, Next; repeat
+  local Servers = ListServers(Next)
+  Server = Servers.data[1]
+  Next = Servers.nextPageCursor
+until Server
+
+TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
+end)
+
+
+OthersSection:NewButton("✅Ragdoll Engine✅", "✅Ragdoll Engine✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(6165420832, game.Players.LocalPlayer, game.PlaceId)
+end)
+
+OthersSection:NewButton("✅Wall Hop Practice✅", "✅Wall Hop Practice✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(4575976957, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅Avtor Scripts Сходка✅", "✅Avtor Scripts Сходка✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(17283498564, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅Client Replication✅", "✅Client Replication✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(10218821851, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅MM2✅", "✅MM2✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(142823291, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅Baseplate✅", "✅Baseplate✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(5194438573, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅Cart Ride Into Rdite✅", "✅Cart Ride Into Rdite✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(4913581664, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅A Literal Baseplate✅", "✅A Literal Baseplate✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(4483381587, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅Natural Disaster Survival✅", "✅Natural Disaster Survival✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(189707, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+OthersSection:NewButton("✅Blade Ball✅", "✅Blade Ball✅", function()
+
+game:GetService("TeleportService"):SetTeleportGui(TeleportingUI)
+TeleportService = game:GetService("TeleportService")
+TeleportService:Teleport(13772394625, game.Players.LocalPlayer, game.PlaceId) 
+end)
+
+local OthersTab = Window:NewTab("Hub")
+local OthersSection = OthersTab:NewSection("Hub")
+
+OthersSection:NewButton("💫Universal Hub💫", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FOGOTY/super-script-all-games-roblox/main/script"))()
+end)
+
+OthersSection:NewButton("🟦System Broken Custom🟦", "🟦System Broken Custom🟦", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/System-Broken-Custom-Avtor-Scripts/main/system%20broken.txt"))()
+end)
+
+OthersSection:NewButton("🟪Pendulum Hub🟪", "🟪Pendulum Hub🟪", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V5.lua"))()
+end)
+
+OthersSection:NewButton("🟥Animation Hub🟥", "🟥Animation Hub🟥", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Animation-Hub/main/Animation%20Gui", true))()
+end)
+
+OthersSection:NewButton("⬛Ghost Hub⬛", "⬛Ghost Hub⬛", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+end)
+
+OthersSection:NewButton("⬛Rochips Panel⬛", "⬛Rochips Panel⬛", function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/pQudVPhR'))()
+end)
+
+OthersSection:NewButton("⬜Equinox Hub⬜", "⬜Equinox Hub⬜", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/wzB1Qh78"))()
+end)
+
+OthersSection:NewButton("🟦Game Hub🟦", "🟦Game Hub🟦", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
+end)
+
+OthersSection:NewButton("🟫Era Hub🟫", "Loads a gui with some features", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/zRWQnNjS'))()
+end)
+
+OthersSection:NewButton("⬛Atomic Hub⬛", "⬛Atomic Hub⬛", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/n0kc/AtomicHub/main/Script.lua'))()
+end)
+
+OthersSection:NewButton("🏿Shakars Hub🏿", "🏿Shakars Hub🏿", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/moonsecV3/main/bido.ty"))()
+end)
+
+OthersSection:NewButton("🟪Malware Hub🟪", "🟪Malware Hub🟪", function()
+
+loadstring(game:HttpGet('https://gist.githubusercontent.com/H20CalibreYT/462f6e6236a9371130f113def6549bb1/raw/'))()
+end)
+
+OthersSection:NewButton("🔳Punkz OG🔳", "🔳Punkz OG🔳", function()
+
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/blackheartedcurse/punkz-Scripts/main/punkzOG.lua'))()
+end)
+
+local OthersTab = Window:NewTab("For Games")
+local OthersSection = OthersTab:NewSection("For Games")
+
+
+
+OthersSection:NewButton("⚫Wyvern (FOR ALL)⚫", "", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wyvernleaker/WYVERN/main/WYVERN.lua",true))()
+end)
+
+OthersSection:NewButton("🔥Destroy Remote Spy🔥", "", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/BaconBossScript/Crazy/main/Crazy'),true))()
+end)
+
+OthersSection:NewButton("🎃Kat🎃", "🎃Kat🎃", function()
+
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-KATERHUB-6696"))()
+end)
+
+OthersSection:NewButton("🌀Blade Ball🌀", "🌀Blade ball🌀", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EminenceXLua/Blade-your-Balls/main/BladeBallLoader.lua"))()
+end)
+
+OthersSection:NewButton("🪝Prison Life🪝", "🪝Prison Life🪝", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ySixxNz/Prison-Life/Prison-Life/Prison%20Life%20-%20Six%20Hub"))() 
+end)
+
+OthersSection:NewButton("🐕Pets Trading🐕", "🐕Pets Trading🐕", function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/QfBaVwEL'))()
+end)
+
+OthersSection:NewButton("🚗Car Dealership Tycoon🚗", "🚗Car Dealership Tycoon🚗", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/zAuR0JUT"))()
+end)
+
+OthersSection:NewButton("🏃Legends Of Speed🏃", "Legends Of Speed🏃", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/mqGPg69N"))()
+end)
+
+OthersSection:NewButton("🚧Prison Life🚧", " 🚧Prison Life🚧", function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/Script'))()
+end)
+
+OthersSection:NewButton("🚪Doors🚪", "🚪Doors🚪", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VaniaPerets/FolderGui-FolderHub/main/loader.lua", true))()
+end)
+
+OthersSection:NewButton("🗡Kat🗡", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubKat"))()
+end)
+
+OthersSection:NewButton("💊Lucky Block💊", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/un_WallHub", true))()
+end)
+
+OthersSection:NewButton("🗡Murder Mystery 2 (RSO) 🗡", "🗡Murder Mystery 2🗡", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RSOscrip/Murder-mystery-2/main/RSO_script"))()
+end)
+
+OthersSection:NewButton("🐝Bee Swarm Simulator🐝", "🐝Bee Swarm Simulator🐝", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Chris8889/atlasbss/main/script.lua"))()
+end)
+
+OthersSection:NewButton("🔵Rainbow Friends🔵", "", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/zReal-King/Rainbow-Friends/main/Main.lua'))()
+end)
+
+OthersSection:NewButton("🚘A Dusty Trip Dupe🚘", "🚘A Dusty Trip Dupe🚘", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ThacG/DustyTripThacScript/main/dupe_pre-release"))("t.me/arceusxscripts")
+setclipboard("https://m.youtube.com/watch?v=tCvyqXbreyI")
+end)
+
+OthersSection:NewButton("🐵Adopt Me🐵", "🐵Adopt Me🐵", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/Roblox-Scripts/main/Adopt-Me/Adopt-Me-Auto-Race.lua"))()
+end)
+
+OthersSection:NewButton("🍎Blox Fruits🍎", "🍎Blox Fruits🍎", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999"))()
+end)
+
+OthersSection:NewButton("🚤Build a Boat🚤", "", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/axleoislost/Roscripts-Hub/main/babft'))()
+end)
+
+OthersSection:NewButton("🦔Pet Simulator 99🦔", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Tests/main/wd_Arise/loader.lua"))()
+end)
+
+local CreatorTab = Window:NewTab("ℹ️Infoℹ️")
+local CreatorSection = CreatorTab:NewSection("Credits to Avtor1zaTion")
+local CreatorSection = CreatorTab:NewSection("Version 2.1")
+
+CreatorSection:NewButton("Copy YT Avtor Scripts Link", "Youtube Avtor Scripts", function()
+
+setclipboard("https://youtube.com/@avtorscripts?si=Pbp9QsfrcDZ5b-nO")
+end)
+CreatorSection:NewButton("Copy TG Avtor Scripts Link", "Telegram Avtor Scripts", function()
+
+setclipboard("https://t.me/AvtorScripts")
+end)
+
+
+wait(0.1)
+
+local stroke = Instance.new("UIStroke")
+stroke.Parent = game.CoreGui.AvtorHub.Main
+stroke.Thickness = 3
+while wait() do local hue = tick() % 15 / 15
+ local color = Color3.fromHSV(hue,1,1)     stroke.Color = color
+end
